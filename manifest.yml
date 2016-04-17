@@ -1,0 +1,6 @@
+---
+applications:
+- name: pcf-demo-autoscale-load-worker
+  memory: 64MB
+  no-route: true
+  command: python loadworker.py

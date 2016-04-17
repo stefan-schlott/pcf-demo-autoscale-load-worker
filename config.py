@@ -15,7 +15,9 @@ if 'VCAP_SERVICES' in os.environ.keys():
     memcachedcloud_service = json.loads(os.environ['VCAP_SERVICES'])['memcachedcloud'][0]
     memcached_credentials = memcachedcloud_service['credentials']
 
-    memcachedURL=memcached_credentials['servers'].split(',')
-    memcachedUsername=memcached_credentials['username']
-    memcachedPassword=memcached_credentials['password']
+    #print "Memcached_Credentials: "+str(memcached_credentials)
+
+    memcachedURL=str(memcached_credentials['servers']).split(',')[0]
+    memcachedUsername=str(memcached_credentials['username'])
+    memcachedPassword=str(memcached_credentials['password'])
 

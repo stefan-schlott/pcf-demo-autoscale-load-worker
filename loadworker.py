@@ -3,7 +3,15 @@ import config
 import time
 
 if __name__ == '__main__':
+    #print config.memcachedURL + ' ' + config.memcachedUsername + ' ' + config.memcachedPassword
+
+    mc = bmemcached.Client(config.memcachedURL, config.memcachedUsername, config.memcachedPassword)
+
+    print mc.stats()
+
     while True:
+        #print config.memcachedURL+ ' '+config.memcachedUsername+' '+config.memcachedPassword
+
         mc = bmemcached.Client(config.memcachedURL, config.memcachedUsername, config.memcachedPassword)
 
         currentState = mc.get('CPULoad')

@@ -1,1 +1,1 @@
-web: python loadworker.py
+worker: python loadworker.py
